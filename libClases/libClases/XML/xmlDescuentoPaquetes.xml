@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Descuento_Paquetes>
+  <Internacional>
+    <Descuento_Internacional CantidadMinima="0" CantidadMaxima="2">0</Descuento_Internacional>
+    <Descuento_Internacional CantidadMinima="2" CantidadMaxima="4">10</Descuento_Internacional>
+    <Descuento_Internacional CantidadMinima="5" CantidadMaxima="99999">20</Descuento_Internacional>
+  </Internacional>
+  <Nacional>
+    <Descuento_Nacional CantidadMinima="0" CantidadMaxima="2">0</Descuento_Nacional>
+    <Descuento_Nacional CantidadMinima="3" CantidadMaxima="99999">10</Descuento_Nacional>
+  </Nacional>
+</Descuento_Paquetes>

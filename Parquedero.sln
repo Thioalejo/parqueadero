@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Parquedero", "Parquedero\", "{251132E9-4110-4EC2-9AA4-751E42EBFAD2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_22579"
+		Debug.AspNetCompiler.PhysicalPath = "Parquedero\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22579\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_22579"
+		Release.AspNetCompiler.PhysicalPath = "Parquedero\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22579\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "22579"
+		SlnRelativePath = "Parquedero\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libClases", "libClases\libClases\libClases.csproj", "{72D93285-9DC3-4D87-8E0D-96CADB368073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libComunes", "libComunes\libComunes\libComunes.csproj", "{65EF2264-E439-4E9D-BE04-83F08C0B9BC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{251132E9-4110-4EC2-9AA4-751E42EBFAD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251132E9-4110-4EC2-9AA4-751E42EBFAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251132E9-4110-4EC2-9AA4-751E42EBFAD2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{251132E9-4110-4EC2-9AA4-751E42EBFAD2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{72D93285-9DC3-4D87-8E0D-96CADB368073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D93285-9DC3-4D87-8E0D-96CADB368073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D93285-9DC3-4D87-8E0D-96CADB368073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D93285-9DC3-4D87-8E0D-96CADB368073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65EF2264-E439-4E9D-BE04-83F08C0B9BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EF2264-E439-4E9D-BE04-83F08C0B9BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EF2264-E439-4E9D-BE04-83F08C0B9BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EF2264-E439-4E9D-BE04-83F08C0B9BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CD6602C-4C0C-4619-A9C4-62FFF7FA99F2}
+	EndGlobalSection
+EndGlobal

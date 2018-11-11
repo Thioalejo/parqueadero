@@ -1,0 +1,43 @@
+create database Parqueadero2
+use Parqueadero2
+
+create table cliente
+(
+ idCliente int identity(1,1) primary key not null,
+ documento varchar(50) not null,
+ nombre varchar(100) not null,
+ apellido varchar(100) not null,
+)
+
+create table vehiculo
+(
+  idVehiculo int identity(1,1) primary key not null,
+  marca varchar(50) not null,
+  color varchar(50) not null,
+  modelo varchar(50) not null,
+  placa varchar(50) not null,
+  idCliente int,
+  foreign key (idCliente) references cliente(idCliente)
+)
+
+create table reserva
+(
+ idReserva int identity(1,1) not null,
+ fecha_llegada Datetime not null,
+ fecha_salida Datetime not null,
+ idCliente int not null,
+ idParqueadero int not null,
+ idVehiculo int not null,
+ foreign key (idCliente) references cliente(idCliente),
+ foreign key (idParqueadero) references parqueadero(idParqueadero),
+ foreign key (idVehiculo) references vehiculo(idVehiculo)
+)
+
+create table parqueadero
+(
+idParqueadero int identity (1,1) primary key,
+celdas_disponibles int not null,
+estado_parqueadero varchar(50),
+idVehiculo int,
+foreign key (idVehiculo) references vehiculo(idVehiculo)
+)

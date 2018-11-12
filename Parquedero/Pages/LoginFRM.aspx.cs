@@ -9,11 +9,11 @@ public partial class Pages_LoginFRM : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Session["Rol"] = "Admin";
     }
 
     protected void btnIniciarSesion_Click(object sender, EventArgs e)
     {
-
+        Session["Rol"] = "Admin";
     }
 }

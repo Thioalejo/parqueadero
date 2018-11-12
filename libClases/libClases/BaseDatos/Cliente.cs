@@ -13,9 +13,9 @@ namespace libClases.BaseDatos
     {
 
         public int idCliente { get; set; }
-        public string Documento { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public int Documento { get; set; }
+        public string Nombre_Completo { get; set; }
+        public int Telefono { get; set; }
 
         private string SQL;
         public string Error { get; private set; }
@@ -23,9 +23,11 @@ namespace libClases.BaseDatos
         public bool Consultar()
         {
 
-            SQL = "SELECT documento, nombre, apellido, idCliente " +
-                  " FROM dbo.cliente " +
-                  " WHERE(documento = @documento)";
+            SQL = "SELECT dbo.TBL_CLIENTE.NOMBRE_COMPLETO, dbo.TBL_RESERVA.ESTADO_RESERVA, " +
+                " dbo.TBL_CLIENTE.DOCUMENTO " +
+                " FROM dbo.TBL_CLIENTE INNER JOIN " +
+                " dbo.TBL_RESERVA ON dbo.TBL_CLIENTE.ID_CLIENTE = dbo.TBL_RESERVA.ID_CLIENTE" +
+                  " WHERE(DOCUMENTO = @documento) AND (dbo.TBL_RESERVA.ESTADO_RESERVA = 'activa')";
 
            /* SQL = "SELECT   strNombre_CLIE, strPrimerApellido_CLIE, " +
                            "strSegundoApellido_CLIE, strDireccion_CLIE " +
@@ -44,10 +46,13 @@ namespace libClases.BaseDatos
                     //Tiene filas, se debe leer la información
                     oConexion.Reader.Read();
                     //Se captura la información
-                    Documento = oConexion.Reader.GetString(0);
-                    Nombre = oConexion.Reader.GetString(1);
-                    Apellido = oConexion.Reader.GetString(2);
-                    idCliente = oConexion.Reader.GetInt32(3);
+                    idCliente = oConexion.Reader.GetInt32(0);
+                    Nombre_Completo = oConexion.Reader.GetString(1);
+                    Documento = oConexion.Reader.GetInt32(2);
+                    Telefono = oConexion.Reader.GetInt32(3);
+
+
+
                     //Libera memoria
                     oConexion.CerrarConexion();
                     oConexion = null;

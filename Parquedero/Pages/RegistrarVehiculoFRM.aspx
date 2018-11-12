@@ -16,7 +16,7 @@
                 <asp:Label ID="Label5" runat="server" Text="Buscar cliente:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtDocumentoCliente" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtDocumentoCliente" runat="server" type="number"></asp:TextBox>
                 <asp:ImageButton ID="ImageButton1" runat="server" Height="16px" ImageUrl="~/Imagenes/loupe.png" Width="21px" OnClick="ImageButton1_Click" />
             </td>
         </tr>
@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td style="width: 208px">
-                <asp:Label ID="Label1" runat="server" Text="Marca:"></asp:Label>
+                <asp:Label ID="lblMarca" runat="server" Text="Marca:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <td style="width: 208px">
-                <asp:Label ID="Label2" runat="server" Text="Color:"></asp:Label>
+                <asp:Label ID="lblColor" runat="server" Text="Color:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="txtColor" runat="server"></asp:TextBox>
@@ -44,7 +44,7 @@
         </tr>
         <tr>
             <td style="width: 208px">
-                <asp:Label ID="Label3" runat="server" Text="Modelo:"></asp:Label>
+                <asp:Label ID="lblModelo" runat="server" Text="Modelo:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="txtModelo" runat="server"></asp:TextBox>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td style="width: 208px">
-                <asp:Label ID="Label4" runat="server" Text="Placa:"></asp:Label>
+                <asp:Label ID="lblPlaca" runat="server" Text="Placa:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="txtPlaca" runat="server"></asp:TextBox>

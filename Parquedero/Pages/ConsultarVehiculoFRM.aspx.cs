@@ -79,6 +79,7 @@ public partial class Pages_ConsultarVehiculoFRM : System.Web.UI.Page
         if (!oVehiculo.LlenarGrid(txtFechaIncial.Text,txtFechaFinal.Text))
         {
             lblError.Text = oVehiculo.Error;
+            oVehiculo = null;
         }
         oVehiculo = null;
 

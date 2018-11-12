@@ -58,6 +58,7 @@
     <Compile Include="BaseDatos\clsTipoProducto.cs" />
     <Compile Include="BaseDatos\clsTipoServicio.cs" />
     <Compile Include="BaseDatos\LoginUsuario.cs" />
+    <Compile Include="BaseDatos\Turno.cs" />
     <Compile Include="BaseDatos\Vehiculo.cs" />
     <Compile Include="ClasesBasicas\clsEscalafon.cs" />
     <Compile Include="ClasesBasicas\clsVenta.cs" />

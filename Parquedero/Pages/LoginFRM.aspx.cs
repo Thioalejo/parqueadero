@@ -24,6 +24,7 @@ public partial class Pages_LoginFRM : System.Web.UI.Page
             Session["Rol"] = login.Rol;
             Session["Usuario"] = login.Usuario;
             Response.Redirect("ConsultarTurnoFRM");
+
         }
         else
         {

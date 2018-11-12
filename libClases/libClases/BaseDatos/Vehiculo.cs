@@ -58,7 +58,7 @@ namespace libClases.BaseDatos
             oGrid.SQL = SQL;
             //oGrid.AgregarParametro("@prFactura", NumeroFactura);
             oGrid.gridGenerico = grid;
-            oGrid.NombreTabla = "Factura";
+            //oGrid.NombreTabla = "Factura";
             if (oGrid.LlenarGridWeb())
             {
                 grid = oGrid.gridGenerico;

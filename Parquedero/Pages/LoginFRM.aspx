@@ -17,7 +17,7 @@
             <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
         </td>
         <td style="height: 19px">
-            <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtUsuario" runat="server">OParqueadero</asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -25,7 +25,7 @@
             <asp:Label ID="lblContraseña" runat="server" Text="Contraseña:"></asp:Label>
         </td>
         <td>
-            <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password">alejo</asp:TextBox>
         </td>
     </tr>
     <tr>

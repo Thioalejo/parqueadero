@@ -51,7 +51,7 @@
                 <div class="navbar-collapse collapse">
                     <%if (Session["Rol"] != null)
                         {
-                            if (Session["Rol"].ToString() == "OParqueadero")
+                            if (Session["Rol"].ToString() == "OParqueadero" )
                             {
                         %>
                                     <ul class="nav navbar-nav">
@@ -62,9 +62,37 @@
                                     </ul>
 
                                     <ul class="nav navbar-nav navbar-right">
-                                         <li><a runat="server" href="~/Pages/LoginFRM">Cerrar sesión</a></li>
+                                         <li><a runat="server" href="~/Pages/CerrarSesion">Cerrar sesión</a></li>
                                     </ul>
                             <% 
+                                }
+                                else if (Session["Rol"].ToString() == "OCaja")
+                                {
+                                    %>
+                                   <ul class="nav navbar-nav">
+                        
+                                        <li><a runat="server" href="~/">Inicio</a></li>
+                                        <li><a runat="server" href="~/Pages/ConsultarTurnoFRM">Consultar turno</a></li> 
+                                       </ul>
+
+                                    <ul class="nav navbar-nav navbar-right">
+                                         <li><a runat="server" href="~/Pages/CerrarSesion">Cerrar sesión</a></li>
+                                    </ul>
+                            <%
+                                }
+                                else if (Session["Rol"].ToString() == "OLavado")
+                                {
+                                    %>
+                                    <ul class="nav navbar-nav">
+                        
+                                        <li><a runat="server" href="~/">Inicio</a></li>
+                                        <li><a runat="server" href="~/Pages/ConsultarTurnoFRM">Consultar turno</a></li> 
+                                       </ul>
+
+                                    <ul class="nav navbar-nav navbar-right">
+                                         <li><a runat="server" href="~/Pages/CerrarSesion">Cerrar sesión</a></li>
+                                    </ul>
+                            <%
                                 }
                                 else if (Session["Rol"].ToString() == "Administrador")
                                 {
@@ -73,7 +101,7 @@
                                          <li><a runat="server" href="~/Pages/ConsultarVehiculoFRM">Consultar Vehículos</a></li>
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right">
-                                         <li><a runat="server" href="~/Pages/LoginFRM">Cerrar sesión</a></li>
+                                         <li><a runat="server" href="~/Pages/CerrarSesion">Cerrar sesión</a></li>
                                     </ul>
                             <%
                                 }
@@ -85,20 +113,10 @@
                                     <AnonymousTemplate>
                                         <ul class="nav navbar-nav navbar-right">
                                             <%--<li><a runat="server" href="~/Account/Register">Registrarse</a></li>--%>
-                                            <%if (Session["Rol"] == null)
-                                                {
-                                            %>
+                                            
+                                           
                                                 <li><a runat="server" href="~/Pages/LoginFRM">Iniciar sesión</a></li>
 
-                                            <%}
-                                            else
-                                            {
-                                            %>
-                                                 <%-- <li><a runat="server" href="~/Pages/LoginFRM">Cerrar sesión</a></li>--%>
-                                             <% } %>   
-
-
-                                
                                         </ul>
                                     </AnonymousTemplate>
                                     <LoggedInTemplate>
@@ -118,21 +136,9 @@
                             <asp:LoginView runat="server" ViewStateMode="Disabled">
                                     <AnonymousTemplate>
                                         <ul class="nav navbar-nav navbar-right">
-                                            <%--<li><a runat="server" href="~/Account/Register">Registrarse</a></li>--%>
-                                            <%if (Session["Rol"] == null)
-                                                {
-                                            %>
+                                        
                                                 <li><a runat="server" href="~/Pages/LoginFRM">Iniciar sesión</a></li>
 
-                                            <%}
-                                            else
-                                            {
-                                            %>
-                                                 <%-- <li><a runat="server" href="~/Pages/LoginFRM">Cerrar sesión</a></li>--%>
-                                             <% } %>   
-
-
-                                
                                         </ul>
                                     </AnonymousTemplate>
                                     <LoggedInTemplate>

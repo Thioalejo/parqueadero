@@ -10,8 +10,12 @@
                 </strong></td>
         </tr>
         <tr>
-            <td style="width: 183px">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td style="width: 183px">
+                <asp:Label ID="lblCedula" runat="server" Text="Cedula:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtCedula" runat="server"></asp:TextBox>
+                </td>
         </tr>
         <tr>
             <td style="width: 183px">
@@ -80,7 +84,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="555px" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                <asp:GridView ID="GridView1" runat="server" Width="555px" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle Width="100px" />
                     <FooterStyle BackColor="#CCCC99" />

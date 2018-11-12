@@ -11,6 +11,6 @@ public partial class Pages_CerrarSesion : System.Web.UI.Page
     {
         Session.Remove("Rol");
         Session.Remove("Usuario");
-        Response.Redirect("Default.aspx");
+        Response.Redirect("LoginFRM.aspx");
     }
 }

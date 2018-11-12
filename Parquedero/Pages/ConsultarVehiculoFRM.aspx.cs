@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using libClases.BaseDatos;
+
 public partial class Pages_ConsultarVehiculoFRM : System.Web.UI.Page
 {
     DataTable table = new DataTable();

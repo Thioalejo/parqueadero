@@ -24,7 +24,7 @@ public partial class Account_Login : Page
             {
                 // Validate the user password
                 var manager = new UserManager();
-                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
+                ApplicationUser user = manager.Find(txtUserName.Text, txtPassword.Text);
                 if (user != null)
                 {
                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);

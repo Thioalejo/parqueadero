@@ -92,6 +92,7 @@ public partial class Pages_ConsultarVehiculoFRM : System.Web.UI.Page
         {
             lblError.Text = "No se encontro resultados en los filtros ingresados";
         }
+        lblError.Text = "";
         oVehiculo = null;
 
         //table.Columns.Add("Id vehiculo", typeof(string));

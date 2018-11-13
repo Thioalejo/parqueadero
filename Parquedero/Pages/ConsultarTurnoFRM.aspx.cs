@@ -84,7 +84,7 @@ public partial class Pages_ConsultarTurnoFRM : System.Web.UI.Page
         {
             lblError.Text = "No se encontro resultados en los filtros ingresados";
         }
-
+        lblError.Text = "";
         oTurno = null;
         //table.Columns.Add("Tipo turno", typeof(string));
         //table.Columns.Add("Fecha inicio", typeof(string));

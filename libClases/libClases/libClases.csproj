@@ -46,22 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos\Cliente.cs" />
-    <Compile Include="BaseDatos\clsArticuloEnReparacion.cs" />
-    <Compile Include="BaseDatos\clsCiudad.cs" />
-    <Compile Include="BaseDatos\clsCliente.cs" />
-    <Compile Include="BaseDatos\clsDepartamento.cs" />
-    <Compile Include="BaseDatos\clsEmpleado.cs" />
-    <Compile Include="BaseDatos\clsFactura.cs" />
-    <Compile Include="BaseDatos\clsPais.cs" />
-    <Compile Include="BaseDatos\clsProducto.cs" />
-    <Compile Include="BaseDatos\clsServicio.cs" />
-    <Compile Include="BaseDatos\clsTipoProducto.cs" />
-    <Compile Include="BaseDatos\clsTipoServicio.cs" />
     <Compile Include="BaseDatos\LoginUsuario.cs" />
     <Compile Include="BaseDatos\Turno.cs" />
     <Compile Include="BaseDatos\Vehiculo.cs" />
-    <Compile Include="ClasesBasicas\clsEscalafon.cs" />
-    <Compile Include="ClasesBasicas\clsVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReglasNegocio\clsAgenciaViajes.cs" />
     <Compile Include="ReglasNegocio\clsRN_DescuentoPaquete.cs" />

@@ -15,8 +15,7 @@ public partial class Pages_ConsultarVehiculoFRM : System.Web.UI.Page
 
 
     }
-    int FechaIncial = 0;
-    int FechaFinal = 0;
+
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
     {
         txtFechaIncial.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");

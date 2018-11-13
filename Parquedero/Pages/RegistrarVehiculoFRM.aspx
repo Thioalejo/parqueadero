@@ -17,7 +17,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDocumentoCliente" runat="server" type="number"></asp:TextBox>
-                <asp:ImageButton ID="ImageButton1" runat="server" Height="16px" ImageUrl="~/Imagenes/loupe.png" Width="21px" OnClick="ImageButton1_Click" />
+                <asp:ImageButton ID="btnBuscar" runat="server" Height="16px" ImageUrl="~/Imagenes/loupe.png" Width="21px" OnClick="ImageButton1_Click" />
             </td>
         </tr>
         <tr>

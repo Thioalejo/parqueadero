@@ -39,7 +39,7 @@ public partial class Pages_RegistrarVehiculoFRM_ : System.Web.UI.Page
 
                 oCliente.Documento = Cedula;
 
-                if (oCliente.Consultar())
+                if (oCliente.ConsultarCliente())
                 {
                     lblCliente.Text = oCliente.Nombre_Completo + " CLIENTE CON RESERVA ACTIVA";
                     lblMarca.Enabled = true;

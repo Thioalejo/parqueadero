@@ -17,13 +17,14 @@ namespace libClases.BaseDatos
         public string Nombre_Completo { get; set; }
         public int Telefono { get; set; }
 
+        public string EstadoReserva { get; set; }
         private string SQL;
         public string Error { get; private set; }
 
-        public bool Consultar()
+        public bool ConsultarCliente()
         {
 
-            SQL = "SELECT dbo.TBL_CLIENTE.NOMBRE_COMPLETO, dbo.TBL_RESERVA.ESTADO_RESERVA, " +
+            SQL = "SELECT dbo.TBL_CLIENTE.ID_CLIENTE, dbo.TBL_CLIENTE.NOMBRE_COMPLETO, dbo.TBL_RESERVA.ESTADO_RESERVA, " +
                 " dbo.TBL_CLIENTE.DOCUMENTO " +
                 " FROM dbo.TBL_CLIENTE INNER JOIN " +
                 " dbo.TBL_RESERVA ON dbo.TBL_CLIENTE.ID_CLIENTE = dbo.TBL_RESERVA.ID_CLIENTE" +
@@ -48,8 +49,9 @@ namespace libClases.BaseDatos
                     //Se captura la información
                     idCliente = oConexion.Reader.GetInt32(0);
                     Nombre_Completo = oConexion.Reader.GetString(1);
-                    Documento = oConexion.Reader.GetInt32(2);
-                    Telefono = oConexion.Reader.GetInt32(3);
+                    EstadoReserva = oConexion.Reader.GetString(2);
+                    Documento = oConexion.Reader.GetInt32(3);
+                    
 
 
 
@@ -62,8 +64,7 @@ namespace libClases.BaseDatos
                 {
                     //No tiene filas, se levanta un error
                     Error = "El cliente con el documento " + Documento +
-                        " no está en la base de datos. \nVerifique la información " +
-                        "o ingréselo al sistema";
+                        " no está en la base de datos. \n O no tiene un reserva activa \n Verifique la información ingresada";
                     //Cerrar la conexión
                     oConexion.CerrarConexion();
                     oConexion = null;

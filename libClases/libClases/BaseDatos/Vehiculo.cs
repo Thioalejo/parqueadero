@@ -20,7 +20,7 @@ namespace libClases.BaseDatos
 
         #region "Metodoes
         public bool Guardar()
-        {
+        {        
             SQL = "INSERT INTO TBL_VEHICULO (COLOR, MARCA, PLACA, MODELO, ID_CLIENTE) " +
                      "VALUES (@marca, @color, @modelo, @placa, @idCliente)";
 
@@ -73,7 +73,57 @@ namespace libClases.BaseDatos
                 return false;
             }
         }
-        
+
+        public bool ConsultarVehiculo()
+        {
+
+            SQL = "SELECT PLACA FROM TBL_VEHICULO WHERE PLACA = @prPlaca";
+
+            /* SQL = "SELECT   strNombre_CLIE, strPrimerApellido_CLIE, " +
+                            "strSegundoApellido_CLIE, strDireccion_CLIE " +
+                   "FROM     tblCliente " +
+                   "WHERE    strDocumento_CLIE = @prDocumento";*/
+
+            clsConexion oConexion = new clsConexion();
+            oConexion.SQL = SQL;
+            oConexion.AgregarParametro("@prPlaca", Placa);
+            //Se invoca el método consultar
+            if (oConexion.Consultar())
+            {
+                //Se verifica si hay datos
+                if (oConexion.Reader.HasRows)
+                {
+                    //Tiene filas, se debe leer la información
+                    oConexion.Reader.Read();
+                    //Se captura la información
+                    Placa = oConexion.Reader.GetString(0);
+
+                    //Libera memoria
+                    oConexion.CerrarConexion();
+                    oConexion = null;
+                    return true;
+                }
+                else
+                {
+                    //No tiene filas, se levanta un error
+                    Error = "La Placa  " + Placa +
+                        " no está en la base de datos. \n O no tiene un reserva activa \n Verifique la información ingresada";
+                    //Cerrar la conexión
+                    oConexion.CerrarConexion();
+                    oConexion = null;
+                    return false;
+                }
+            }
+            else
+            {
+                Error = oConexion.Error;
+                //Se debe cerrar la conexión
+                oConexion.CerrarConexion();
+                oConexion = null;
+                return false;
+            }
+        }
+
         #endregion
 
 

@@ -48,11 +48,12 @@ namespace libClases.BaseDatos
 
         public bool LlenarGrid(string fecha_inicial, string fecha_final)
         {
-            SQL = "SELECT dbo.TBL_VEHICULO.ID_VEHICULO, dbo.TBL_VEHICULO.COLOR, dbo.TBL_VEHICULO.MARCA, dbo.TBL_VEHICULO.PLACA, dbo.TBL_VEHICULO.MODELO, dbo.TBL_VEHICULO.ID_CLIENTE, " +
+            SQL = "SELECT dbo.TBL_VEHICULO.ID_VEHICULO, dbo.TBL_VEHICULO.COLOR, dbo.TBL_VEHICULO.MARCA, " +
+                " dbo.TBL_VEHICULO.PLACA, dbo.TBL_VEHICULO.MODELO, dbo.TBL_CLIENTE.NOMBRE_COMPLETO, " +
                 " dbo.TBL_RESERVA.FECHA_LLEGADA " +
-                " FROM dbo.TBL_CLIENTE INNER JOIN " +
-                " dbo.TBL_RESERVA ON dbo.TBL_CLIENTE.ID_CLIENTE = dbo.TBL_RESERVA.ID_CLIENTE INNER JOIN " +
-                " dbo.TBL_VEHICULO ON dbo.TBL_CLIENTE.ID_CLIENTE = dbo.TBL_VEHICULO.ID_CLIENTE where FECHA_LLEGADA between'" + fecha_inicial + "' and '" + fecha_final+"'";
+                " FROM  dbo.TBL_VEHICULO INNER JOIN" +
+                " dbo.TBL_CLIENTE ON dbo.TBL_VEHICULO.ID_CLIENTE = dbo.TBL_CLIENTE.ID_CLIENTE INNER JOIN " +
+                " dbo.TBL_RESERVA ON dbo.TBL_CLIENTE.ID_CLIENTE = dbo.TBL_RESERVA.ID_CLIENTE where FECHA_LLEGADA between'" + fecha_inicial + "' and '" + fecha_final+"'";
 
             clsGrid oGrid = new clsGrid();
             oGrid.SQL = SQL;

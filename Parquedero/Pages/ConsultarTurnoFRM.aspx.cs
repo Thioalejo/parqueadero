@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -32,10 +33,29 @@ public partial class Pages_ConsultarTurnoFRM : System.Web.UI.Page
 
     protected void Calendar2_SelectionChanged(object sender, EventArgs e)
     {
+     
         txtFechaFinal.Text = Calendar2.SelectedDate.ToString("yyyy-MM-dd");
-        Calendar2.Visible = false;
+        int fechaInicial = Convert.ToInt32(Calendar1.SelectedDate.ToString("yyyyMMdd"));
+        int fechaFinal = Convert.ToInt32(Calendar2.SelectedDate.ToString("yyyyMMdd"));
 
+        if (ValidarFecha(fechaInicial,fechaFinal))
+        {
+            Calendar2.Visible = false;
+        }
+        else
+        {
+            lblError.Text = "La fecha final debe ser mayor a la inicial.";
+        }
+    }
 
+    public bool ValidarFecha(int fechaInicial, int fechaFinal)
+    {
+        if(fechaFinal < fechaInicial)
+        {
+            return false;
+        }
+        return true;
+        
     }
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
     {
@@ -60,25 +80,28 @@ public partial class Pages_ConsultarTurnoFRM : System.Web.UI.Page
         {
             lblError.Text = oTurno.Error;
             oTurno = null;
+        }else if(oTurno.grid.Rows.Count==0)
+        {
+            lblError.Text = "No se encontro resultados en los filtros ingresados";
         }
+
         oTurno = null;
-        /*table.Columns.Add("Fecha", typeof(string));
-        table.Columns.Add("Dia", typeof(string));
+        //table.Columns.Add("Tipo turno", typeof(string));
+        //table.Columns.Add("Fecha inicio", typeof(string));
+        //table.Columns.Add("Fecha fin", typeof(string));
+        //table.Columns.Add("Nombre", typeof(string));
+        //table.Columns.Add("Cedula", typeof(string));
 
-        table.Rows.Add("26/10/2018", "Viernes");
-        table.Rows.Add("29/10/2018", "Lunes");
-        table.Rows.Add("30/10/2018", "Martes");
-        table.Rows.Add("31/10/2018", "Miercoles");
-        table.Rows.Add("01/11/2018", "Jueves");
-        table.Rows.Add("02/11/2018", "Viernes");
-        table.Rows.Add("03/11/2018", "Sabado");
+        //table.Rows.Add("N/A","25/10/2018", "28/10/2018", "Pedro", "1152684641");
+        //table.Rows.Add("Nocturno", "26/10/2018", "28/10/2018", "Pedro", "1152684641");
+        //table.Rows.Add("Diurno", "27/10/2018", "28/10/2018", "Pedro", "1152684641");
+        //table.Rows.Add("Casa", "28/10/2018", "28/10/2018", "Pedro", "1152684641");
+        //table.Rows.Add("Casa", "29/10/2018", "28/10/2018", "Pedro", "1152684641");
+        //table.Rows.Add("N/A", "30/10/2018", "28/10/2018", "Pedro", "1152684641");
 
 
+        //GridView1.DataSource = table;
+        //GridView1.DataBind();
 
-
-
-        GridView1.DataSource = table;
-        GridView1.DataBind();
-        */
     }
 }

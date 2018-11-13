@@ -45,20 +45,26 @@ public partial class Pages_ConsultarVehiculoFRM : System.Web.UI.Page
     protected void Calendar2_SelectionChanged(object sender, EventArgs e)
     {
         txtFechaFinal.Text = Calendar2.SelectedDate.ToString("yyyy-MM-dd");
-        Calendar2.Visible = false;
-       // lblError.Text = "La fecha inicial debe ser menor a la fecha final";
-        //lblError.Text = "Usted no tiene turnos asignados en este rango de fechas.";
-        // FechaFinal = Convert.ToInt32(Calendar2.SelectedDate.ToLongDateString());
+        int fechaInicial = Convert.ToInt32(Calendar1.SelectedDate.ToString("yyyyMMdd"));
+        int fechaFinal = Convert.ToInt32(Calendar2.SelectedDate.ToString("yyyyMMdd"));
 
-        //if (FechaFinal < FechaIncial)
-        //{
-        //    lblError.Text = "La fecha inicial debe ser menor a la fecha final";
-        //    Calendar2.Visible = true;
-        //}else
-        //{
-        //    txtFechaFinal.Text = Calendar2.SelectedDate.ToLongDateString();
-        //    Calendar2.Visible = false;
-        //}
+        if (ValidarFecha(fechaInicial, fechaFinal))
+        {
+            Calendar2.Visible = false;
+        }
+        else
+        {
+            lblError.Text = "La fecha final debe ser mayor a la inicial.";
+        }
+
+    }
+    public bool ValidarFecha(int fechaInicial, int fechaFinal)
+    {
+        if (fechaFinal < fechaInicial)
+        {
+            return false;
+        }
+        return true;
 
     }
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
@@ -77,29 +83,32 @@ public partial class Pages_ConsultarVehiculoFRM : System.Web.UI.Page
         //txtfecha.Text = Calendar1.SelectedDate.AddDays(7).ToShortDateString();
 
 
-        if (!oVehiculo.LlenarGrid(txtFechaIncial.Text,txtFechaFinal.Text))
+        if (!oVehiculo.LlenarGrid(txtFechaIncial.Text, txtFechaFinal.Text))
         {
             lblError.Text = oVehiculo.Error;
             oVehiculo = null;
         }
+        else if (oVehiculo.grid.Rows.Count == 0)
+        {
+            lblError.Text = "No se encontro resultados en los filtros ingresados";
+        }
         oVehiculo = null;
 
-       /* table.Columns.Add("Documento cliente", typeof(string));
-        table.Columns.Add("Cliente", typeof(string));
-        table.Columns.Add("Fecha/Hora reserva", typeof(string));
-        table.Columns.Add("Fecha/Hora fin reserva", typeof(string));
-        //table.Columns.Add("Fecha/Hora salida del parqueadero", typeof(string));
-        table.Columns.Add("Celda", typeof(string));
-        table.Columns.Add("Placa vehículo", typeof(string));
+        //table.Columns.Add("Id vehiculo", typeof(string));
+        //table.Columns.Add("Color", typeof(string));
+        //table.Columns.Add("Marca", typeof(string));
+        //table.Columns.Add("Placa", typeof(string));
+        //table.Columns.Add("Modelo", typeof(string));
+        //table.Columns.Add("Nombre propietario", typeof(string));
+        //table.Columns.Add("Fecha llegada", typeof(string));
 
-        table.Rows.Add("1152684632","Juan carlos", "29/10/2018 2:00 pm", "31/10/2018 2:00 pm","410","UDZ4499");
-        table.Rows.Add("52684632", "Alejandro carlos", "28/10/2018 5:00 pm", "31/10/2018 2:00 pm" ,"414", "UDI4499");
-        table.Rows.Add("684632", "Pedro carlos", "29/10/2018 9:00 pm", "31/10/2018 7:00 pm", "40", "UDS499");
-        table.Rows.Add("184632", "Carlos", "29/10/2018 2:00 pm", "31/10/2018 2:00 pm", "418", "UHZ489");
+        //table.Rows.Add("1", "Rojo", "Ford", "PASO12", "2018", "Alejandro", "31/10/2018");
+        //table.Rows.Add("2", "Verde", "Ford 2", "PO12", "2017", "Pedro", "31/10/2018");
+        //table.Rows.Add("3", "Rosado", "Ford 3", "ASO12", "2016", "Alejandro", "31/10/2018");
 
-        GridView1.DataSource = table;
-        GridView1.DataBind();
-        */
+        //GridView1.DataSource = table;
+        //GridView1.DataBind();
+
     }
 
 

@@ -34,7 +34,7 @@
     </tr>
     <tr>
         <td class="text-justify" colspan="2">
-            <asp:Button ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" Text="Iniciar sesión" />
+            <asp:Button ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" Text="Iniciar sesión" class="btn btn-primary" />
         </td>
     </tr>
     <tr>
